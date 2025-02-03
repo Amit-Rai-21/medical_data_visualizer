@@ -1,0 +1,34 @@
+In this we will visualize and make calculations from medical examination data using(Pandas,seaborn and matplotlib).
+The datadset values were collected during medical examination
+
+
+File_name=medical_examination.csv
+Reading the Dataset:
+-The dataset medical_examination.csv is read into a Pandas DataFrame.
+
+Adding Overweight Column:
+-A "BMI" (Body Mass Index) column is calculated using weight and height. Height is converted from centimeters to meters.
+-The "Overweight" column is added: a value of 1 if the BMI is greater than 25 (overweight) and 0 otherwise.
+
+Normalizing Data:
+-The cholesterol and glucose levels are normalized: values greater than 1 are set to 1 (indicating high cholesterol/glucose), and values less than or equal to 1 are set to 0.
+
+Drawing a Categorical Plot:
+-A function draw_cat_plot() is defined to generate a count plot showing the distribution of categorical variables (cholesterol, gluc, smoke, alco, active, and Overweight) against the target variable cardio.
+-The plot is saved as a PNG file (catplot.png).
+
+Drawing a Heatmap:
+-A function draw_heat_map() is defined to generate a heatmap of correlations between the features.
+-Data is filtered by removing outliers (e.g., ensuring ap_lo <= ap_hi and using quantiles for height and weight).
+-The correlation matrix is computed, and a mask is applied to hide the upper triangle of the heatmap (to avoid redundant information).
+-The heatmap is plotted using seaborn and saved as heatmap.png.
+
+
+
+Graph summary:
+The graph reveals significant differences in health behaviors and conditions between individuals with and without cardiovascular disease. 
+People with cardiovascular disease are more likely to have high cholesterol and glucose levels and to be overweight. 
+Meanwhile, those without the disease tend to have normal levels in these areas and are generally not overweight.
+Interestingly, both groups have higher numbers of non-smokers, non-drinkers, and physically active individuals. This 
+suggests that lifestyle choices play a crucial role in managing and potentially preventing cardiovascular disease.
+
